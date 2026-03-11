@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Buka Puasa Bersama Akhir Ramadhan Keluarga Besar H.Ismail2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .page-container {
+            height: 100%;
+            width: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        section {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Background per halaman */
+        #p1 { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+    url('sampul.JPG'); }
+        #p2 { background-color: #f0f4f0; }
+        #p3 { background-color: #e8f5e9; }
+        #p4 { background-color: #ffffff; }
+        #p5 { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0, 0, 0, 0.6)), url('penutup.JPG'); }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1, h2 { color: #2e7d32; margin-bottom: 15px; }
+        
+        .btn-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            background: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-prev { background: #888; }
+        .btn:hover { opacity: 0.8; }
+
+        /* Countdown Style */
+        .countdown-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .countdown-item {
+            background: #2e7d32;
+            color: white;
+            padding: 8px 0;
+            border-radius: 10px;
+        }
+
+        .countdown-item span { display: block; font-size: 1.1rem; font-weight: bold; }
+        .countdown-item label { font-size: 0.65rem; text-transform: uppercase; }
+
+        .qr-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px dashed #2e7d32;
+            margin-top: 15px;
+        }
+
+        .map-wrapper {
+            margin-top: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="backsound" loop>
+        <source src="lebaran.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="page-container" id="mainContainer">
+        
+        <section id="p1">
+            <div class="card">
+                <h1>Undangan Bukber</h1>
+                <p>"Menyambung silaturahmi, meraih keberkahan menyambut hari yang fitri."</p>
+                <button class="btn" onclick="goTo(1)" style="width: 100%; margin-top: 20px;">Buka Undangan</button>
+            </div>
+        </section>
+
+        <section id="p2">
+            <div class="card">
+                <h2>Waktu & Tanggal</h2>
+                <div style="padding: 15px; background: #e8f5e9; border-radius: 15px;">
+                    <p style="font-size: 18px;"><b>Jum'at, 20 Maret 2026</b></p>
+                    <p>17.00 WITA - Selesai</p>
+                </div>
+
+                <div class="countdown-container">
+                    <div class="countdown-item"> <span id="days">00</span> <label>Hari</label> </div>
+                    <div class="countdown-item"> <span id="hours">00</span> <label>Jam</label> </div>
+                    <div class="countdown-item"> <span id="minutes">00</span> <label>Menit</label> </div>
+                    <div class="countdown-item"> <span id="seconds">00</span> <label>Detik</label> </div>
+                </div>
+
+                <div class="btn-nav">
+                    <button class="btn btn-prev" onclick="goTo(0)">Kembali</button>
+                    <button class="btn" onclick="goTo(2)">Lokasi</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="p3">
+            <div class="card">
+                <h2>Lokasi Acara</h2>
+                <p><b>Kediaman H. Ismail & Hj. Hamdiah</b><br>Jalan Ahmad Yani Desa Tinigi, Kab.Tolitoli</p>
+                
+                <div class="map-wrapper">
+                    <iframe 
+                        width="100%" 
+                        height="200" 
+                        frameborder="0" 
+                        style="border:0" 
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3989.431235122709!2d120.82959727496464!3d1.1244443988647037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMDcnMjguMCJOIDEyMMKwNDknNTQuOSJF!5e0!3m2!1sid!2sid!4v1715600000000!5m2!1sid!2sid" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="btn-nav">
+                    <button class="btn btn-prev" onclick="goTo(1)">Sebelumnya</button>
+                    <button class="btn" onclick="goTo(3)">QR Code</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="p4">
+            <div class="card">
+                <h2>Verifikasi Tamu</h2>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BukberTinigi2026" alt="QR">
+                <div class="qr-box">
+                    <p style="font-size: 13px; color: #333;"><b>Simpan QR ini sebagai verifikasi tamu</b></p>
+                </div>
+                <div class="btn-nav">
+                    <button class="btn btn-prev" onclick="goTo(2)">Sebelumnya</button>
+                    <button class="btn" onclick="goTo(4)">Penutup</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="p5">
+            <div class="card" style="background: rgba(255,255,255,0.95)">
+                <h2>Penutup</h2>
+                <p>Terima kasih atas perhatian dan kehadirannya. Semoga kita semua dipertemukan dalam keberkahan Ramadan berikutnya.</p>
+                <p style="margin-top:20px; font-weight: bold; color: #2e7d32;">Wassalamu'alaikum Wr. Wb.</p>
+                <div class="btn-nav">
+                    <button class="btn btn-prev" onclick="goTo(3)">Sebelumnya</button>
+                    <button class="btn" onclick="goTo(0)" style="background: #333;">Kembali ke Awal</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const container = document.getElementById('mainContainer');
+        const audio = document.getElementById('backsound');
+
+        function goTo(index) {
+            if (index > 0) {
+                audio.play().catch(() => console.log("Musik diputar."));
+            }
+            container.style.transform = `translateY(-${index * 100}vh)`;
+        }
+
+        // TIMER HITUNG MUNDUR
+        const eventDate = new Date("March 20, 2026 17:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const diff = eventDate - now;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = d < 10 ? "0"+d : d;
+            document.getElementById("hours").innerText = h < 10 ? "0"+h : h;
+            document.getElementById("minutes").innerText = m < 10 ? "0"+m : m;
+            document.getElementById("seconds").innerText = s < 10 ? "0"+s : s;
+        }, 1000);
+    </script>
+</body>
+</html>
